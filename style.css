@@ -1,0 +1,70 @@
+
+/* style.css - Rapid Group Security Division (Professional Classic) */
+
+:root{
+  --navy: #0a3d62;
+  --accent: #1e6fb8;
+  --muted: #6b7a8a;
+  --bg: #f5f7fa;
+  --card: #ffffff;
+}
+
+*{box-sizing:border-box;}
+body{font-family:Inter, "Segoe UI", Roboto, Arial, sans-serif; margin:0; color:#111; background:var(--bg); line-height:1.6;}
+.container{max-width:1100px; margin:0 auto; padding:0 20px;}
+
+/* Header */
+header{background:var(--card); box-shadow:0 2px 8px rgba(5,15,30,0.06); position:sticky; top:0; z-index:40;}
+.header-inner{display:flex; align-items:center; justify-content:space-between; padding:12px 20px; max-width:1100px; margin:0 auto;}
+.brand{display:flex; align-items:center; gap:12px;}
+.brand img{height:56px; width:56px; object-fit:contain; border-radius:6px;}
+.brand h1{font-size:18px; margin:0; color:var(--navy);}
+.nav{display:flex; gap:18px; align-items:center;}
+.nav a{color:var(--muted); text-decoration:none; font-weight:600;}
+.nav a:hover{color:var(--navy);}
+
+/* Hero */
+.hero{background-image: linear-gradient(rgba(10,61,98,0.6), rgba(10,61,98,0.6)), url('images/foto1.jpg'); background-size:cover; background-position:center; padding:80px 0; color:white;}
+.hero .container{display:flex; gap:40px; align-items:center;}
+.hero .left{flex:1;}
+.hero h2{font-size:36px; margin:0 0 10px; color:#fff;}
+.hero p{color:rgba(255,255,255,0.9); margin:0 0 18px;}
+.cta{display:inline-block; background:var(--accent); color:white; padding:10px 18px; border-radius:8px; text-decoration:none; font-weight:700;}
+
+/* Sections */
+section.card{background:var(--card); margin:24px auto; padding:30px; border-radius:10px; box-shadow:0 6px 20px rgba(8,20,40,0.05);}
+section h3{color:var(--navy); margin-top:0;}
+.columns{display:flex; gap:24px; margin-top:16px;}
+.col{flex:1;}
+
+/* Services list */
+.services ul{list-style:none; padding:0; margin:0;}
+.services li{padding:10px 0; border-bottom:1px solid #eef3f7; color:var(--muted); font-weight:600;}
+
+/* Gallery */
+.gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:12px;}
+.gallery img{width:100%; height:160px; object-fit:cover; border-radius:8px;}
+
+/* Contact */
+.contact-grid{display:grid; grid-template-columns:1fr 320px; gap:20px;}
+.contact-card{background:#fafcff; padding:18px; border-radius:8px; border:1px solid #e9f0f8;}
+.form-group{display:flex; flex-direction:column; gap:8px; margin-bottom:12px;}
+.form-group input,.form-group textarea{padding:10px; border:1px solid #d7e3f2; border-radius:6px;}
+
+/* Footer */
+footer{background:var(--navy); color:white; padding:20px 0; margin-top:30px;}
+.footer-inner{max-width:1100px; margin:0 auto; display:flex; justify-content:space-between; gap:20px; padding:0 20px; flex-wrap:wrap;}
+.footer-inner p{margin:0; color:rgba(255,255,255,0.9);}
+
+/* Responsive */
+@media (max-width:900px){
+  .columns{flex-direction:column;}
+  .hero .container{flex-direction:column; text-align:center;}
+  .contact-grid{grid-template-columns:1fr;}
+  .gallery{grid-template-columns:repeat(2,1fr);}
+}
+@media (max-width:480px){
+  .gallery img{height:120px;}
+  .brand img{height:48px;}
+  .hero h2{font-size:26px;}
+}
