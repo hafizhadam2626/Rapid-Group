@@ -1,241 +1,98 @@
-/* style.css - Rapid Group Security Division (Professional Classic Style) */
-
-/* 🎨 Warna utama */
-:root {
-  --navy: #0a3d62;
-  --accent: #1e6fb8;
-  --muted: #6b7a8a;
-  --bg: #f5f7fa;
-  --white: #ffffff;
-}
-
-/* Reset dasar */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: "Segoe UI", Arial, sans-serif;
-  background-color: var(--bg);
-  color: #222;
-  line-height: 1.6;
-}
-
-/* ================= HEADER ================= */
-header {
-  background-color: var(--white);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.header-inner {
-  max-width: 1100px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-}
-
-/* Logo + Judul */
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.brand img {
-  height: 55px;
-  width: 55px;
-  object-fit: contain;
-}
-
-.brand h1 {
-  font-size: 18px;
-  color: var(--navy);
-  font-weight: 700;
-}
-
-.brand p {
-  color: var(--muted);
-  font-size: 12px;
-}
-
-/* Menu Navigasi */
-.nav {
-  display: flex;
-  gap: 20px;
-}
-
-.nav a {
-  text-decoration: none;
-  color: var(--muted);
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.nav a:hover {
-  color: var(--navy);
-}
-
-/* ================= HERO SECTION ================= */
+/* === HERO SECTION === */
 .hero {
-  background: linear-gradient(rgba(10, 61, 98, 0.6), rgba(10, 61, 98, 0.6)),
-    url("images/foto1.jpg") center/cover no-repeat;
+  position: relative;
+  height: 100vh;
+  background: url("images/building-night.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: white;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 25, 50, 0.75); /* biru gelap transparan */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
   text-align: center;
-  padding: 100px 20px;
+  max-width: 900px;
+  padding: 20px;
+  animation: fadeInUp 1.3s ease forwards;
 }
 
-.hero h2 {
-  font-size: 36px;
-  margin-bottom: 10px;
+.hero-logo {
+  width: 180px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 2px 6px rgba(255,255,255,0.3));
 }
 
-.hero p {
-  font-size: 16px;
-  margin-bottom: 25px;
-  color: rgba(255, 255, 255, 0.9);
+.hero-content h1 {
+  font-size: 56px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #eaf3ff;
+}
+
+.hero-content h2 {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 18px;
+  color: #a6c5f7;
+}
+
+.hero-content p {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 28px;
+  color: #dbe9ff;
 }
 
 .cta {
-  display: inline-block;
-  background-color: var(--accent);
+  background: #007bff;
   color: white;
-  padding: 10px 20px;
-  border-radius: 6px;
+  padding: 14px 36px;
+  border-radius: 8px;
   text-decoration: none;
-  font-weight: bold;
-}
-
-/* ================= SECTION UMUM ================= */
-section {
-  max-width: 1000px;
-  background: white;
-  margin: 30px auto;
-  padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-section h3 {
-  color: var(--navy);
-  margin-bottom: 15px;
-}
-
-section p {
-  color: #444;
-  margin-bottom: 10px;
-}
-
-/* ================= LAYANAN ================= */
-.services ul {
-  list-style: none;
-  padding: 0;
-}
-
-.services li {
-  padding: 10px 0;
-  border-bottom: 1px solid #eef1f5;
-  color: var(--muted);
   font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: background 0.3s ease;
+  display: inline-block;
 }
 
-/* ================= GALERI ================= */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 12px;
+.cta:hover {
+  background: #005dc1;
 }
 
-.gallery img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
+.hero-contact {
+  margin-top: 26px;
+  font-size: 15px;
+  color: #d0e7ff;
+  line-height: 1.6;
 }
 
-.gallery img:hover {
-  transform: scale(1.03);
-}
-
-/* ================= KONTAK ================= */
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 350px;
-  gap: 20px;
-}
-
-.contact-card {
-  background: #f9fbfe;
-  padding: 20px;
-  border-radius: 8px;
-  border: 1px solid #d7e3f2;
-}
-
-.form-group {
-  margin-bottom: 15px;
-}
-
-.form-group label {
-  font-weight: 600;
-  color: var(--navy);
-  margin-bottom: 5px;
-  display: block;
-}
-
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #d7e3f2;
-  border-radius: 6px;
-  font-family: inherit;
-}
-
-button.cta {
-  width: 100%;
-  text-align: center;
-  border: none;
-  cursor: pointer;
-}
-
-/* ================= FOOTER ================= */
-footer {
-  background-color: var(--navy);
-  color: white;
-  text-align: center;
-  padding: 20px;
-  margin-top: 40px;
-}
-
-footer p {
-  margin: 4px 0;
-  color: rgba(255, 255, 255, 0.85);
-}
-
-/* ================= RESPONSIVE ================= */
-@media (max-width: 768px) {
-  .header-inner {
-    flex-direction: column;
-    gap: 10px;
+/* === Animasi === */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
   }
-
-  .nav {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero h2 {
-    font-size: 28px;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
+
+
