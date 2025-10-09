@@ -1,17 +1,21 @@
 body {
   margin: 0;
   font-family: "Segoe UI", sans-serif;
+  line-height: 1.6;
   color: #222;
-  background: #f9f9f9;
 }
 
-header {
+/* HEADER */
+.navbar {
   background: #0a2342;
-  color: white;
-  padding: 14px 0;
+  color: #fff;
+  padding: 12px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-.header-inner {
+.nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,89 +24,110 @@ header {
   padding: 0 20px;
 }
 
-.brand {
+.logo {
   display: flex;
   align-items: center;
   gap: 10px;
+  font-weight: bold;
+  font-size: 18px;
 }
 
-.brand img {
-  height: 50px;
+.logo img {
+  height: 45px;
 }
 
-.subtitle {
-  font-size: 12px;
-  color: #bcd4ff;
-}
-
-.nav a {
-  color: white;
-  margin-left: 20px;
+nav a {
+  color: #fff;
+  margin-left: 18px;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s;
 }
 
-.nav a:hover {
-  color: #79aaff;
+nav a:hover {
+  color: #7aa6ff;
 }
 
-/* HERO SECTION */
+/* HERO */
 .hero {
   background: url("images/building-night.jpg") center/cover no-repeat;
-  padding: 80px 20px;
-  color: white;
-}
-
-.hero .container {
+  height: 75vh;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  max-width: 1100px;
-  margin: 0 auto;
-  gap: 20px;
-}
-
-.hero .left {
-  flex: 1 1 55%;
-}
-
-.hero .right {
-  flex: 1 1 35%;
-}
-
-.contact-card {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 18px;
-  border-radius: 8px;
-}
-
-.cta {
-  background: #007bff;
+  align-items: center;
+  justify-content: center;
   color: white;
-  padding: 10px 24px;
+  position: relative;
+}
+
+.hero-overlay {
+  background: rgba(0, 20, 60, 0.75);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-size: 36px;
+  margin-bottom: 16px;
+}
+
+.btn-primary {
+  background: #007bff;
+  color: #fff;
+  padding: 10px 22px;
   border-radius: 6px;
   text-decoration: none;
-  font-weight: 600;
-  display: inline-block;
-  margin-top: 10px;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
-.cta:hover {
+.btn-primary:hover {
   background: #005dc1;
 }
 
-/* CARD SECTION */
-.card.container {
-  max-width: 1100px;
-  margin: 60px auto;
-  padding: 30px;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+/* SECTIONS */
+.section {
+  padding: 60px 20px;
 }
 
-/* GALLERY */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.bg-light {
+  background: #f4f6fb;
+}
+
+.bg-dark {
+  background: #0a2342;
+  color: white;
+}
+
+.services {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px;
+}
+
+.services li {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  color: #0a2342;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* GALERI */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -113,32 +138,66 @@ header {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 10px;
   transition: transform 0.3s;
 }
 
 .gallery img:hover {
-  transform: scale(1.03);
+  transform: scale(1.05);
+}
+
+/* KONTAK */
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.contact-form {
+  flex: 1 1 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.contact-form button {
+  align-self: start;
+}
+
+.contact-info {
+  flex: 1 1 300px;
 }
 
 /* FOOTER */
 footer {
-  background: #0a2342;
-  color: #bcd4ff;
+  background: #071a33;
+  color: #ccc;
   text-align: center;
   padding: 20px 0;
+  font-size: 14px;
 }
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
-  .header-inner {
-    flex-direction: column;
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
-  .hero .container {
-    flex-direction: column;
-    text-align: center;
+  .hero h1 {
+    font-size: 28px;
   }
-  .hero .right {
-    margin-top: 20px;
+  .contact-container {
+    flex-direction: column;
   }
 }
+
