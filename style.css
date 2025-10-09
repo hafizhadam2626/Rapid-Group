@@ -200,4 +200,9 @@ footer {
     flex-direction: column;
   }
 }
+.bg-light {
+  background: #f4f6fb;
+  color: #0a2342; /* tambahkan baris ini */
+}
+
 
