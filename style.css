@@ -1,122 +1,145 @@
-/* ===== HERO SECTION ===== */
-.hero {
-  position: relative;
-  height: 100vh;
-  background: url("images/building-night.jpg") center/cover no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  overflow: hidden;
+/* Global */
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  color: #f0f0f0;
+  background-color: #f9f9f9;
 }
 
-.hero-overlay {
+h1, h2 {
+  margin: 0;
+  text-align: center;
+}
+
+.section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* HERO SECTION */
+.hero {
+  position: relative;
+  background: url("images/building-night.jpg") center/cover no-repeat;
+  height: 75vh; /* tidak full, biar tidak zoom banget */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero .overlay {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(5, 20, 50, 0.75); /* Lapisan biru gelap transparan */
-  backdrop-filter: blur(2px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  right: 0;
+  bottom: 0;
+  background: rgba(10, 25, 50, 0.8);
 }
 
 .hero-content {
   position: relative;
-  text-align: center;
-  max-width: 900px;
-  padding: 20px;
+  max-width: 800px;
   z-index: 2;
-  animation: fadeInUp 1.2s ease forwards;
+  padding: 20px;
 }
 
 .hero-logo {
-  width: 180px;
-  margin-bottom: 25px;
-  filter: drop-shadow(0 2px 6px rgba(255,255,255,0.3));
-}
-
-.hero-content h1 {
-  font-size: 58px;
-  font-weight: 700;
-  letter-spacing: 1.2px;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  color: #eaf3ff;
-}
-
-.hero-content h2 {
-  font-size: 26px;
-  font-weight: 400;
-  color: #a6c5f7;
+  width: 100px;
   margin-bottom: 20px;
 }
 
-.hero-content p {
-  font-size: 18px;
-  line-height: 1.7;
-  color: #dbe9ff;
-  margin-bottom: 30px;
+.hero h1 {
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+  font-weight: 700;
 }
 
-.cta-btn {
-  background: linear-gradient(135deg, #007bff, #005dc1);
-  color: white;
-  padding: 14px 40px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  transition: all 0.3s ease;
-  display: inline-block;
-  box-shadow: 0 4px 14px rgba(0, 123, 255, 0.4);
+.hero h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 16px;
 }
 
-.cta-btn:hover {
-  background: linear-gradient(135deg, #005dc1, #00419a);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(0, 123, 255, 0.6);
-}
-
-.contact-info {
-  margin-top: 35px;
-  font-size: 16px;
-  color: #d0e7ff;
+.hero p {
+  font-size: 1rem;
   line-height: 1.6;
+  color: #e0e0e0;
+  margin-bottom: 24px;
 }
 
-/* Animasi Fade In */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.btn-primary {
+  display: inline-block;
+  background-color: #1e4b8f;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
 }
 
-/* ===== RESPONSIVE ===== */
+.btn-primary:hover {
+  background-color: #163b70;
+}
+
+/* GALERI */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* KONTAK */
+.contact {
+  background: #1e4b8f;
+  color: white;
+  padding: 60px 20px;
+  border-top: 4px solid #163b70;
+}
+
+.contact p {
+  margin: 10px 0;
+  font-size: 1rem;
+}
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 38px;
+  .hero {
+    height: 60vh;
   }
-  .hero-content h2 {
-    font-size: 20px;
-  }
+
   .hero-logo {
-    width: 130px;
+    width: 80px;
   }
-  .hero-content p {
-    font-size: 16px;
+
+  .hero h1 {
+    font-size: 1.8rem;
   }
-  .cta-btn {
-    padding: 12px 30px;
-    font-size: 14px;
+
+  .hero h2 {
+    font-size: 1.4rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .btn-primary {
+    padding: 10px 22px;
   }
 }
-
-
