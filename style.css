@@ -142,6 +142,15 @@ p {
   margin-bottom: 2rem;
 }
 
+.hero-description {
+  font-size: 1.05rem;
+  color: #eaeaea;
+  max-width: 750px;
+  margin: 0 auto 2rem auto;
+  line-height: 1.8;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
 .hero-content {
   animation: fadeInUp 1.2s ease-out;
 }
@@ -385,6 +394,7 @@ p {
     font-size: 1rem;
   }
 }
+
 
 
 
