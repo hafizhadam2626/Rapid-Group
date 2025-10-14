@@ -1,14 +1,14 @@
-"""// Simple intersection observer to add .visible class to .fade-up elements
-document.addEventListener('DOMContentLoaded', function() {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = 1;
-        entry.target.style.transform = 'translateY(0)';
-      }
-    });
-  }, {threshold: 0.15});
+// scroll.js
+const fadeElements = document.querySelectorAll('.fade-up');
 
-  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-});"""
-(out_dir / "scroll.js").write_text(scroll_js, encoding="utf-8")
+function handleScroll() {
+  fadeElements.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 100) {
+      el.classList.add('show');
+    }
+  });
+}
+
+window.addEventListener('scroll', handleScroll);
+handleScroll();
