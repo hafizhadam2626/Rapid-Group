@@ -185,6 +185,12 @@ p {
 /* ================================
    PROFIL / VISI MISI
 =================================== */
+#profil {
+  background: #f8f9fa; /* abu muda */
+  color: #222;
+  padding: 80px 0;
+}
+
 #profil h2 {
   text-align: center;
   margin-bottom: 1.5rem;
@@ -411,6 +417,7 @@ p {
   opacity: 1 !important;
   transform: none !important;
 }
+
 
 
 
