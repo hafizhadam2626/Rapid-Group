@@ -407,6 +407,13 @@ p {
   }
 }
 
+.fade-up {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+
+
 
 
 
