@@ -185,9 +185,21 @@ p {
 /* ================================
    PROFIL / VISI MISI
 =================================== */
-#profil p, #visi-misi p {
-  font-size: 1.05rem;
+#profil h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: #0a1a3b;
 }
+
+#profil p {
+  text-align: justify;
+  font-size: 1.05rem;
+  color: #333;
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
 
 .visi-misi-grid {
   display: grid;
@@ -394,6 +406,7 @@ p {
     font-size: 1rem;
   }
 }
+
 
 
 
